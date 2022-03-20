@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Righteous", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Comum */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #c7cdd3;
+}
+
+button {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 25px;
+  background-color: yellow;
+  border: none;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: orange;
+  color: white;
+}
+
+/* Código */
+
+#apresentation {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 50px;
+  color: white;
+}
+
+#gameBoard {
+  display: none;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 700px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.card img {
+  padding: 10px;
+  width: 150px;
+}
+
+.card_front,
+.card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+.flip {
+  transform: rotateY(180deg);
+  cursor: not-allowed;
+}
+
+.card_front {
+  transform: rotateY(180deg);
+  background-color: #272a37;
+}
+
+.card_back {
+  transform: rotatey(0deg);
+  background-color: #05c3ff;
+  font-size: 30px;
+  color: #272a37;
+}
+
+#gameOver {
+  position: absolute;
+  top: 0;
+  display: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 50px;
+  color: white;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1600px) {
+  #apresentation {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  #apresentation {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  button {
+    font-size: 20px;
+  }
+
+  #apresentation {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  button {
+    font-size: 20px;
+  }
+
+  #apresentation {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  button {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  #apresentation {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  button {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  #apresentation {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  button {
+    padding: 5px;
+    font-size: 5px;
+  }
+
+  #apresentation {
+    font-size: 10px;
+  }
+}
